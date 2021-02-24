@@ -1,12 +1,12 @@
 package main;
 
 public class Massive {
-    private int k = 0; // счетчик кавычек
+    private int k = 0; 
 
-    public String[] getMassive(String a) { //создает метод getMassive с типом возвращаемого значения массив и принимаемой строкой в параметре
-        String[] massive = {"", ""};//Присваивает переменной massive два пустых значения чтобы она не была пустой а то ругается)
+    public String[] getMassive(String a) { 
+        String[] massive = {"", ""};
         for (int i = 0; i < a.length(); i++) {
-            char[] simbols = a.toCharArray(); //создал массив символов при помощи toCharArray
+            char[] simbols = a.toCharArray(); 
             if (simbols[i] == '"') {
                 k++;
                 continue;
@@ -27,7 +27,7 @@ public class Massive {
 
     }
 
-    public void getNowMass_umn(String a) {  // умножение
+    public void getNowMass_umn(String a) { 
         String[] strings = a.split("\\*", 2);
         String res = "";
         int size = 0;
@@ -66,7 +66,7 @@ public class Massive {
         return k;
     }
 
-    public void getNowMass_del(String a) { // деление
+    public void getNowMass_del(String a) { 
         String[] strings = a.split("\\/", 2);
         int size = 0;
         try {
