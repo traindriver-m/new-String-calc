@@ -7,7 +7,7 @@ public class Plus  {
 
 
     public void operation(String a) {
-       // System.out.println("сработал класс +");
+       
         Massive m= new Massive();
         String[] plusMassive = m.getMassive(a);
 
