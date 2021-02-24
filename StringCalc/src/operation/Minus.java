@@ -6,10 +6,10 @@ import main.Massive;
 public class Minus  {
 
     public void operation(String a) {
-       // System.out.println("сработал класс -");
+       
         Massive l=new Massive();
         String[] minusMassive=l.getMassive(a);
-       // System.out.println(minusMassive[0]+minusMassive[1]);
+       
         String result = new String("");
         String[] m1 = minusMassive[0].split(" ");
         String[] m2 = minusMassive[1].split(" ");
