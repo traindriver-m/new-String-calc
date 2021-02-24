@@ -5,45 +5,45 @@ import operation.Minus;
 import operation.Plus;
 import operation.Umnojit;
 
-import java.util.Scanner; // импорт класса сканнер
+import java.util.Scanner; 
 
-public class Main { // объявляет класс мэйн
+public class Main { 
     public static void main(String[] args) {
-        new Main().start(); //создает новый объект класса Main и одновременно запускает метод start в нем
-        //  System.err.println("не нашел знак после вторых кавычек");
+        new Main().start(); 
+       
     }
 
-    // метод start считывает строку из консоли и определяет введенный знак после вторых(и следующих) кавычек
-    private void start() {  // объявляет приватный метод мэйн
-        while (true) { // начинает цикл для неперерывной работы программы
-            Scanner scanner = new Scanner(System.in); // создает новый объект класса сканнер
-            String f = scanner.nextLine(); // создает строковую переменную и присваиваем ей значение строки считанной из консоли
-            int c = 0; // создает целочисленную переменную со значением 0
-            int r = 0; // создает целочисленную переменную со значением 0
-            for (char x : f.toCharArray()) { // сравнивает(или присваивает?) переменную x с каждым символом полученной строки f
-                if (r == 0 && x != '"') { //задаем условие если первый символ не " то
-                    System.err.println("Не соответствует условию!(main)"); // выдает сообщение
-                    System.exit(1); // завершает работу программы
+    
+    private void start() { 
+        while (true) { 
+            Scanner scanner = new Scanner(System.in); 
+            String f = scanner.nextLine(); 
+            int c = 0; 
+            int r = 0; 
+            for (char x : f.toCharArray()) { 
+                if (r == 0 && x != '"') { 
+                    System.err.println("Не соответствует условию!(main)"); 
+                    System.exit(1); 
                 }
-                r++; // добавляем значение r чтобы не сравнивать второй символ с "
+                r++; 
                 if (x == '"' && c < 2)
-                    c++; //задаем условие.если находит " и с меньше 2 то добавляет значение с на 1(считает кавычки)
+                    c++; 
                 else if (c >= 2)
-                    switch (x) { // если кавычек 2 или больше то начинает сравнивать следующий символ со знаками.
-                        case '+': //если совпадает с + то выполняет ниже
-                            Plus plus = new Plus(); //создает новый объект класса Plus
-                            plus.operation(f); // используя оператор доступа запускает выполнение метода operation класса Plus
-                            break; // если не совпало перебрасывает дальше
-                        case '-': //если совпадает с - то выполняет ниже
-                            Minus minus = new Minus(); //создает новый объект класса Minus
-                            minus.operation(f);// используя оператор доступа запускает выполнение метода operation класса Minus
-                            break; // если не совпало перебрасывает дальше
-                        case '*': //если совпадает с * то выполняет ниже
-                            new Umnojit().operation(f); //создает новый объект класса Umnojit и одновременно запускает метод operation в нем
-                            break;// если не совпало перебрасывает дальше
-                        case '/': //если совпадает с / то выполняет ниже
-                            new Delit().operation(f); //создает новый объект класса Delit и одновременно запускает метод operation в нем
-                            break;// если не совпало перебрасывает дальше
+                    switch (x) { 
+                        case '+': 
+                            Plus plus = new Plus(); 
+                            plus.operation(f); 
+                            break; 
+                        case '-': 
+                            Minus minus = new Minus(); 
+                            minus.operation(f);
+                            break; 
+                        case '*': 
+                            new Umnojit().operation(f); 
+                            break;
+                        case '/': 
+                            new Delit().operation(f); 
+                            break;
 
 
                     }
