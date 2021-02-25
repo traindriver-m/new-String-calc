@@ -11,8 +11,8 @@ public class Minus  {
         String[] minusMassive=l.getMassive(a);
        
         String result = new String("");
-        String[] m1 = minusMassive[0].split(" ");
-        String[] m2 = minusMassive[1].split(" ");
+        String[] m1 = minusMassive[0].split("");
+        String[] m2 = minusMassive[1].split("");
         boolean b = true;
         for(String s: m1){
             for (String s2:m2) if(s.equals(s2)) b = false;
